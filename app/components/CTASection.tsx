@@ -17,18 +17,15 @@ export default function CTASection() {
 
   return (
     <section ref={sectionRef} className="relative py-32 overflow-hidden">
-      <motion.div
-        className="absolute inset-0"
-        style={{ y: bgY, scale }}
-      >
+      <motion.div className="absolute inset-0" style={{ y: bgY, scale }}>
         <Image
-          src="https://picsum.photos/seed/bromo-magic-sunset/1920/800"
-          alt="Experience the Magic of Mount Bromo"
+          src="https://picsum.photos/seed/tamilnadu-sunset-golden-landscape/1920/800"
+          alt="Begin Your Tamil Nadu Journey"
           fill
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/50 to-black/70" />
       </motion.div>
 
       <motion.div
@@ -51,12 +48,12 @@ export default function CTASection() {
             className="font-[var(--font-playfair)] text-white leading-tight mb-6"
             style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
           >
-            Experience the Magic of{" "}
-            <span className="italic text-[#E8703A]">Mount Bromo Today</span>
+            Begin Your Tamil Nadu{" "}
+            <span className="italic text-[#E8703A]">Journey Today</span>
           </h2>
 
           <p className="text-white/70 text-base leading-relaxed mb-10 max-w-xl mx-auto">
-            Discover the untamed beauty of East Java&apos;s volcanic highlands. Book your adventure now and create memories that last a lifetime with BromoBliss.
+            Ancient temples, misty Nilgiri peaks, sun-kissed shores — Tamil Nadu&apos;s timeless wonders await. Book your soulful adventure now with TamilSoul.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -66,7 +63,7 @@ export default function CTASection() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center gap-2 bg-[#E8703A] text-white px-8 py-4 rounded-full font-semibold text-sm shadow-2xl shadow-[#E8703A]/40 hover:bg-[#d4623a] transition-colors"
             >
-              Start Your Tour
+              Explore Tours
               <motion.svg
                 className="w-4 h-4"
                 fill="none"
@@ -80,14 +77,14 @@ export default function CTASection() {
             </motion.a>
 
             <motion.a
-              href="#moments"
+              href="#destinations"
               whileHover={{ scale: 1.06, backgroundColor: "rgba(255,255,255,0.2)" }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center gap-2 border border-white/40 text-white px-8 py-4 rounded-full font-semibold text-sm backdrop-blur-sm transition-colors hover:border-white/60"
             >
-              View Gallery
+              View Destinations
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               </svg>
             </motion.a>
           </div>
@@ -97,12 +94,12 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="flex items-center justify-center gap-6 mt-10"
+            className="flex items-center justify-center gap-8 mt-10"
           >
             {[
-              { icon: "🌄", label: "15+ Tour Packages" },
-              { icon: "⭐", label: "4.9/5 Rating" },
-              { icon: "👥", label: "2,400+ Travelers" },
+              { label: "50+ Tour Packages", icon: "🗺️" },
+              { label: "4.9 / 5 Rating", icon: "⭐" },
+              { label: "15,000+ Travelers", icon: "🙏" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-white/70">
                 <span className="text-lg">{item.icon}</span>

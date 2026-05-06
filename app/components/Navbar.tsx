@@ -6,11 +6,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Packages", href: "/packages" },
-  { label: "Experience", href: "/experience" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Destinations", href: "#destinations" },
+  { label: "Experiences", href: "#experiences" },
+  { label: "Tours", href: "#tours" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Contact", href: "#booking" },
 ];
 
 export default function Navbar() {
@@ -28,7 +28,6 @@ export default function Navbar() {
 
   const isDark = isHome && !scrolled;
   const textColor = isDark ? "text-white/90" : "text-gray-600";
-  const hoverColor = "hover:text-brand-orange";
   const navBg = scrolled || !isHome
     ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
     : "bg-transparent py-5";
@@ -41,41 +40,34 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-full bg-[#E8703A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm">
             <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
-              <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" />
+              <path d="M12 2C9.5 5 7 8 7 11a5 5 0 0010 0c0-3-2.5-6-5-9zm0 3.5C13.3 7.3 15 9.5 15 11a3 3 0 01-6 0c0-1.5 1.7-3.7 3-5.5zM5 14c0 3.9 3.1 7 7 7s7-3.1 7-7c0-.4 0-.8-.1-1.1C17.3 14.6 14.8 16 12 16s-5.3-1.4-6.9-3.1C5 13.2 5 13.6 5 14z" />
             </svg>
           </div>
-          <span className={`text-base font-bold tracking-tight font-serif transition-colors duration-300 ${isDark ? "text-white" : "text-gray-900"}`}>
-            BromoBliss
+          <span className={`text-base font-bold tracking-tight font-[var(--font-playfair)] transition-colors duration-300 ${isDark ? "text-white" : "text-gray-900"}`}>
+            TamilSoul
           </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
-          {navLinks.map((item, i) => {
-            const isActive = pathname === item.href;
-            return (
-              <motion.div
-                key={item.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.07, duration: 0.5 }}
+          {navLinks.map((item, i) => (
+            <motion.div
+              key={item.href}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.07, duration: 0.5 }}
+            >
+              <a
+                href={item.href}
+                className={`text-sm font-medium relative group transition-colors duration-300 ${textColor} hover:text-[#E8703A]`}
               >
-                <Link
-                  href={item.href}
-                  className={`text-sm font-medium relative group transition-colors duration-300 ${textColor} ${hoverColor}`}
-                >
-                  {item.label}
-                  <span
-                    className={`absolute -bottom-0.5 left-0 h-0.5 bg-brand-orange transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  />
-                </Link>
-              </motion.div>
-            );
-          })}
+                {item.label}
+                <span className="absolute -bottom-0.5 left-0 h-0.5 bg-[#E8703A] w-0 group-hover:w-full transition-all duration-300" />
+              </a>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
@@ -84,15 +76,15 @@ export default function Navbar() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="hidden md:block"
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-brand-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-brand-orange/25 hover:bg-[#d4623a] transition-all duration-300 hover:scale-105 active:scale-95"
+          <a
+            href="#tours"
+            className="inline-flex items-center gap-2 bg-[#E8703A] text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-[#E8703A]/25 hover:bg-[#d4623a] transition-all duration-300 hover:scale-105 active:scale-95"
           >
-            Book Now
+            Book Tour
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
             </svg>
-          </Link>
+          </a>
         </motion.div>
 
         <button
@@ -118,24 +110,22 @@ export default function Navbar() {
             className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-3"
           >
             {navLinks.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-sm font-medium py-1.5 transition-colors ${
-                  pathname === item.href ? "text-brand-orange" : "text-gray-700 hover:text-brand-orange"
-                }`}
+                className="text-sm font-medium py-1.5 transition-colors text-gray-700 hover:text-[#E8703A]"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href="#tours"
               onClick={() => setMenuOpen(false)}
-              className="bg-brand-orange text-white text-center py-3 rounded-full font-semibold text-sm mt-1"
+              className="bg-[#E8703A] text-white text-center py-3 rounded-full font-semibold text-sm mt-1"
             >
-              Book Now
-            </Link>
+              Book Tour
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

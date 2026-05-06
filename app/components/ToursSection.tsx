@@ -11,31 +11,39 @@ gsap.registerPlugin(ScrollTrigger);
 const tours = [
   {
     id: 1,
-    name: "Sunrise Explorer",
-    price: 29,
-    seed: "sunrise-hike-orange/400/280",
+    name: "Temple Circuit",
+    price: 299,
+    days: "7 Days",
+    seed: "temple-pilgrimage-ancient-india/400/280",
     tag: "Most Popular",
+    desc: "Madurai · Rameswaram · Kanyakumari",
   },
   {
     id: 2,
-    name: "Adventure Trail",
-    price: 49,
-    seed: "mountain-river-adventure/400/280",
+    name: "Nilgiris Retreat",
+    price: 199,
+    days: "5 Days",
+    seed: "ooty-hills-misty-train-tea/400/280",
     tag: "Best Value",
+    desc: "Ooty · Kodaikanal · Valparai",
   },
   {
     id: 3,
-    name: "Night & Stars Escape",
-    price: 100,
-    seed: "night-camping-stars/400/280",
-    tag: "Premium",
+    name: "Heritage & Cuisine",
+    price: 149,
+    days: "4 Days",
+    seed: "chettinad-heritage-food-mansion/400/280",
+    tag: "Cultural",
+    desc: "Chettinad · Thanjavur · Kumbakonam",
   },
   {
     id: 4,
-    name: "Private Bromo Journey",
+    name: "Coastal Discovery",
     price: 249,
-    seed: "private-mountain-guide/400/280",
-    tag: "Exclusive",
+    days: "6 Days",
+    seed: "pondicherry-coastal-french-beach/400/280",
+    tag: "Premium",
+    desc: "Mahabalipuram · Pondicherry · Rameswaram",
   },
 ];
 
@@ -85,18 +93,18 @@ export default function ToursSection() {
         >
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-8 h-0.5 bg-[#E8703A]" />
-            <span className="text-[#E8703A] text-xs font-bold tracking-[0.2em] uppercase">Bromo Tours</span>
+            <span className="text-[#E8703A] text-xs font-bold tracking-[0.2em] uppercase">Tour Packages</span>
             <span className="w-8 h-0.5 bg-[#E8703A]" />
           </div>
           <h2
             className="font-[var(--font-playfair)] text-gray-900 leading-tight max-w-2xl mx-auto"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
-            Discover the Best Bromo Adventures{" "}
-            <span className="italic text-[#E8703A]">for Every Kind of Traveler</span>
+            Crafted Journeys for{" "}
+            <span className="italic text-[#E8703A]">Every Tamil Nadu Dream</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
-            Carefully crafted packages for every traveler who dreams of witnessing sunrise views, volcano trails, or night sky magic.
+            Carefully curated packages for every traveler — whether you seek temples, mountains, heritage, or coast.
           </p>
         </motion.div>
 
@@ -108,8 +116,8 @@ export default function ToursSection() {
             transition={{ duration: 0.4 }}
           >
             <Image
-              src="https://picsum.photos/seed/bromo-untamed-landscape/600/800"
-              alt="Discover the Untamed Beauty of Bromo"
+              src="https://picsum.photos/seed/tamilnadu-temples-panoramic-gold/600/800"
+              alt="Discover the Timeless Soul of Tamil Nadu"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -120,10 +128,10 @@ export default function ToursSection() {
                 Featured
               </span>
               <h3 className="font-[var(--font-playfair)] text-white text-2xl leading-tight mb-2">
-                Discover the Untamed Beauty of Bromo
+                Discover the Timeless Soul of Tamil Nadu
               </h3>
               <p className="text-white/70 text-xs leading-relaxed mb-4">
-                A curated journey through the volcanic highlands with local expert guides.
+                A curated journey through ancient temples, misty hills, and sun-kissed shores with expert local guides.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -135,8 +143,8 @@ export default function ToursSection() {
             </div>
           </motion.div>
 
-          {/* Tour Cards Grid */}
-          {tours.map((tour, i) => (
+          {/* Tour Cards */}
+          {tours.map((tour) => (
             <motion.div
               key={tour.id}
               className="tour-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group"
@@ -148,25 +156,29 @@ export default function ToursSection() {
                   src={`https://picsum.photos/seed/${tour.seed}`}
                   alt={tour.name}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-600"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute top-3 left-3">
+                <div className="absolute top-3 left-3 flex gap-2">
                   <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-[9px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full">
                     {tour.tag}
+                  </span>
+                  <span className="bg-black/40 backdrop-blur-sm text-white text-[9px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full">
+                    {tour.days}
                   </span>
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 text-base mb-1">{tour.name}</h3>
+                <h3 className="font-semibold text-gray-900 text-base mb-0.5">{tour.name}</h3>
+                <p className="text-[#E8703A] text-[10px] font-medium mb-2">{tour.desc}</p>
                 <p className="text-gray-400 text-xs mb-3 leading-relaxed">
-                  Guided experience with professional photo stops and local cuisine.
+                  Expert local guides, curated stops, authentic meals, and cultural immersion.
                 </p>
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-gray-400 text-[10px]">from</span>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-[#E8703A] text-xl font-bold">${tour.price}</span>
+                      <span className="text-[#E8703A] text-xl font-bold">Rs. {tour.price}</span>
                       <span className="text-gray-400 text-xs">/ person</span>
                     </div>
                   </div>

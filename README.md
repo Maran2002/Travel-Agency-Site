@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TamilSoul — Discover the Soul of Tamil Nadu
 
-## Getting Started
+A premium travel landing page for Tamil Nadu, India — built with cinematic scroll animations, interactive cultural exploration, and a rich modern design system.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## About
+
+TamilSoul is a fully animated, single-page travel website showcasing Tamil Nadu's temples, hills, coastline, heritage, and cuisine. It is designed to feel like a luxury travel brand — with GSAP-powered horizontal scroll, Framer Motion tab transitions, infinite marquee testimonials, and a multi-step booking guide.
+
+**Live sections:**
+- Hero with GSAP scroll-triggered text reveal
+- Destinations — GSAP horizontal scroll (desktop) / vertical grid (mobile)
+- Experiences — 5-tab cultural explorer with animated pill navigation
+- Tour Packages — 4 curated Tamil Nadu tours
+- Moments — masonry photo gallery with staggered entrance
+- Captured Memories — traveler photo reviews
+- Testimonials — GSAP infinite dual-row marquee
+- Booking Guide — 4-step interactive booking flow with dynamic image panel
+- CTA — parallax Ken Burns call-to-action
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js 16.2](https://nextjs.org) — App Router |
+| UI | [React 19](https://react.dev) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com) |
+| Scroll Animations | [GSAP 3](https://gsap.com) + ScrollTrigger |
+| UI Animations | [Framer Motion 12](https://www.framer.com/motion/) |
+| Language | TypeScript 5 |
+| Fonts | Playfair Display (headings), Inter (body) via `next/font/google` |
+| Images | [picsum.photos](https://picsum.photos) — seed-based deterministic placeholders |
+
+---
+
+## Design Tokens
+
+| Token | Value | Usage |
+|---|---|---|
+| Brand Saffron | `#E8703A` | Primary CTA, accents |
+| Maroon | `#8B1A1A` | Deep accent |
+| Warm Dark | `#1A1209` | Footer background |
+| Ivory Cream | `#FAF5EC` | Section backgrounds |
+
+---
+
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── Navbar.tsx
+│   ├── HeroSection.tsx
+│   ├── DestinationsSection.tsx
+│   ├── ExperiencesSection.tsx
+│   ├── ToursSection.tsx
+│   ├── MomentsSection.tsx
+│   ├── CaptureSection.tsx
+│   ├── TestimonialsSection.tsx
+│   ├── BookingSection.tsx
+│   ├── CTASection.tsx
+│   └── Footer.tsx
+├── globals.css         # Design tokens (@theme)
+├── layout.tsx          # Root layout + fonts
+└── page.tsx            # Page composition
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Prerequisites:** Node.js 18+
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Start development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Production build
+npm run build
+npm start
 
-## Deploy on Vercel
+# Lint
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**Elamaran A**
+- Email: elamaranvikki@gmail.com
+
+---
+
+

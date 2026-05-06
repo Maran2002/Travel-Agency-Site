@@ -2,21 +2,27 @@
 
 :root {
   --brand-orange: #E8703A;
-  --brand-dark: #1A1A1A;
-  --brand-cream: #F9F6F1;
-  --brand-text: #333333;
-  --brand-muted: #6B7280;
+  --brand-maroon: #8B1A1A;
+  --brand-gold: #C49A1A;
+  --brand-green: #1E5230;
+  --brand-dark: #1A1209;
+  --brand-cream: #FAF5EC;
+  --brand-text: #2D1F0E;
+  --brand-muted: #8C7B65;
 }
 
 @theme inline {
   --color-background: #ffffff;
-  --color-foreground: #1A1A1A;
+  --color-foreground: #1A1209;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-playfair), Georgia, serif;
   --color-brand-orange: #E8703A;
-  --color-brand-dark: #1A1A1A;
-  --color-brand-cream: #F9F6F1;
-  --color-brand-muted: #6B7280;
+  --color-brand-maroon: #8B1A1A;
+  --color-brand-gold: #C49A1A;
+  --color-brand-green: #1E5230;
+  --color-brand-dark: #1A1209;
+  --color-brand-cream: #FAF5EC;
+  --color-brand-muted: #8C7B65;
 }
 
 html {

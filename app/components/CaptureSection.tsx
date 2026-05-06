@@ -9,11 +9,11 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  { seed: "photographer-mountain/300/380", name: "Jo Park", rating: 5, review: "Absolutely magical sunrise, worth every penny!" },
-  { seed: "hiker-sunrise-landscape/300/380", name: "Arjun Rahmah", rating: 5, review: "The most beautiful place I've ever visited." },
-  { seed: "travel-landscape-adventure/300/380", name: "Ruby Aditya", rating: 5, review: "Professional guides made it unforgettable." },
-  { seed: "volcano-explorer-photo/300/380", name: "Liz Nur", rating: 4, review: "Stunning views and amazing photography spots." },
-  { seed: "bromo-summit-photo/300/380", name: "Kai Rahman", rating: 5, review: "The crater landscape was beyond my imagination." },
+  { seed: "india-traveler-temple-tour/300/380", name: "Priya Sharma", rating: 5, review: "The temple circuit was absolutely divine! Worth every rupee." },
+  { seed: "tourist-hills-ooty-tea/300/380", name: "Arjun Krishnan", rating: 5, review: "Ooty exceeded all my expectations. TamilSoul is exceptional!" },
+  { seed: "kanyakumari-visitor-sunrise/300/380", name: "Sarah Mitchell", rating: 5, review: "Watching sunrise at Kanyakumari truly left me speechless." },
+  { seed: "south-india-food-restaurant/300/380", name: "Meera Nair", rating: 5, review: "Chettinad cuisine tour was a revelation for my palate." },
+  { seed: "chettinad-heritage-visitor/300/380", name: "Raj Patel", rating: 5, review: "The heritage walk through Chettinad was pure magic." },
 ];
 
 function StarRating({ rating }: { rating: number }) {
@@ -61,7 +61,7 @@ export default function CaptureSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-[#FAF5EC] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,11 +79,11 @@ export default function CaptureSection() {
             className="font-[var(--font-playfair)] text-gray-900 leading-tight max-w-2xl mx-auto"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
-            Capture Your Mount Bromo{" "}
+            Capture Your Tamil Nadu{" "}
             <span className="italic text-[#E8703A]">Journey Forever</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
-            Make every sunrise, trail, and volcanic moment with professional photo stops. Documentation crafted to preserve your adventure beautifully.
+            Every sunrise, trail, and cultural moment beautifully documented — crafted to preserve your Tamil Nadu adventure for a lifetime.
           </p>
         </motion.div>
 
@@ -116,7 +116,6 @@ export default function CaptureSection() {
                   </div>
                 </motion.div>
               </div>
-
               <div className="px-1">
                 <StarRating rating={photo.rating} />
                 <h4 className="text-gray-900 font-semibold text-sm mt-1.5">{photo.name}</h4>

@@ -18,11 +18,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | BromoBliss",
-    default: "BromoBliss – Unforgettable Mount Bromo Adventures",
+    template: "%s | TamilSoul",
+    default: "TamilSoul – Discover the Soul of Tamil Nadu",
   },
   description:
-    "Experience breathtaking sunrise, explore volcanic landscapes, and create unforgettable memories at Mount Bromo, Indonesia's most iconic destination.",
+    "Ancient temples, misty Nilgiri hills, sun-kissed shores — explore Tamil Nadu's timeless beauty with India's most trusted Tamil Nadu travel experts.",
 };
 
 export default function RootLayout({

@@ -5,18 +5,16 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 const moments = [
-  { seed: "hiking-mountain-sunrise/400/520", title: "Golden Hour Trek", aspect: "portrait" },
-  { seed: "adventure-outdoor-travel/360/520", title: "Summit Views", aspect: "portrait" },
-  { seed: "volcanic-sand-landscape/400/300", title: "Spa of Sand Explosion", caption: "3 days, 2 nights" },
-  { seed: "traveler-volcano-overlook/360/520", title: "Volcano Gazing", aspect: "portrait" },
-  { seed: "bromo-landscape-green/700/300", title: "Valley of Wonders", caption: "Guided Day Trip" },
+  { seed: "temple-gopuram-evening-lights/400/520", title: "Temple at Dusk" },
+  { seed: "nilgiris-green-hills-valley/360/520", title: "Nilgiri Hills" },
+  { seed: "kanyakumari-dawn-horizon/400/300", title: "Land's End Dawn", caption: "Kanyakumari, TN" },
+  { seed: "classical-dance-bharatanatyam/360/520", title: "Classical Dance" },
+  { seed: "mahabalipuram-shore-temple-sea/700/300", title: "Shore Temple", caption: "UNESCO Heritage Site" },
 ];
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const cardVariants = {
@@ -35,7 +33,7 @@ export default function MomentsSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="moments" className="py-24 bg-white overflow-hidden">
+    <section id="gallery" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,7 +44,7 @@ export default function MomentsSection() {
         >
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="w-8 h-0.5 bg-[#E8703A]" />
-            <span className="text-[#E8703A] text-xs font-bold tracking-[0.2em] uppercase">Find Adventure</span>
+            <span className="text-[#E8703A] text-xs font-bold tracking-[0.2em] uppercase">Find Your Moment</span>
             <span className="w-8 h-0.5 bg-[#E8703A]" />
           </div>
           <h2
@@ -54,10 +52,10 @@ export default function MomentsSection() {
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
             Unforgettable Moments in the{" "}
-            <span className="italic text-[#E8703A]">Heart of Mount Bromo</span>
+            <span className="italic text-[#E8703A]">Heart of Tamil Nadu</span>
           </h2>
           <p className="text-gray-500 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
-            Experience breathtaking sunrise, explore volcanic landscapes, and create memories of one of Indonesia&apos;s most iconic destinations.
+            From dawn rituals at ancient temples to misty mountain mornings — every frame tells a story only Tamil Nadu can write.
           </p>
         </motion.div>
 
@@ -69,7 +67,7 @@ export default function MomentsSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
           style={{ gridTemplateRows: "auto auto" }}
         >
-          {/* Card 1 - tall portrait */}
+          {/* Card 1 — tall portrait */}
           <motion.div variants={cardVariants} className="row-span-2 relative rounded-2xl overflow-hidden group cursor-pointer" style={{ minHeight: 420 }}>
             <Image
               src={`https://picsum.photos/seed/${moments[0].seed}`}
@@ -107,7 +105,7 @@ export default function MomentsSection() {
             </div>
           </motion.div>
 
-          {/* Card 3 - with caption overlay */}
+          {/* Card 3 — wide */}
           <motion.div variants={cardVariants} className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer" style={{ height: 200 }}>
             <Image
               src={`https://picsum.photos/seed/${moments[2].seed}`}
@@ -140,7 +138,7 @@ export default function MomentsSection() {
             </div>
           </motion.div>
 
-          {/* Card 5 - wide */}
+          {/* Card 5 — wide */}
           <motion.div variants={cardVariants} className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer" style={{ height: 200 }}>
             <Image
               src={`https://picsum.photos/seed/${moments[4].seed}`}

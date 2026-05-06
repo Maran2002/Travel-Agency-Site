@@ -2,21 +2,21 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const quickLinks = [
-  { label: "About Us", href: "#" },
+  { label: "About TamilSoul", href: "#" },
   { label: "Tour Packages", href: "#tours" },
-  { label: "Photo Gallery", href: "#" },
+  { label: "Destinations", href: "#destinations" },
+  { label: "Photo Gallery", href: "#gallery" },
   { label: "Travel Guide", href: "#" },
   { label: "Partner With Us", href: "#" },
 ];
 
 const contactInfo = [
-  { icon: "📍", text: "Mount Bromo, East Java, Indonesia" },
-  { icon: "📞", text: "+62 851 4316 4976" },
-  { icon: "📞", text: "+62 851 4316 4979" },
-  { icon: "✉️", text: "hello@bromobliss.com" },
+  { icon: "📍", text: "No. 12, Chennai, Tamil Nadu, India" },
+  { icon: "📞", text: "+91 98765 43210" },
+  { icon: "📞", text: "+91 98765 43211" },
+  { icon: "✉️", text: "hello@tamilsoul.in" },
 ];
 
 const socialLinks = [
@@ -39,20 +39,20 @@ const socialLinks = [
     ),
   },
   {
+    label: "YouTube",
+    href: "#",
+    icon: (
+      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+  {
     label: "Twitter",
     href: "#",
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
-    label: "TikTok",
-    href: "#",
-    icon: (
-      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34l-.02-8.97a8.25 8.25 0 004.83 1.55V4.44a4.85 4.85 0 01-1.04-.25z" />
       </svg>
     ),
   },
@@ -71,21 +71,22 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1A1A1A] text-white">
+    <footer className="bg-[#1A1209] text-white">
+      <div className="h-1 bg-gradient-to-r from-[#8B1A1A] via-[#E8703A] to-[#C49A1A]" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-2.5 mb-5">
               <div className="w-8 h-8 rounded-full bg-[#E8703A] flex items-center justify-center">
                 <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
-                  <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7" />
+                  <path d="M12 2C9.5 5 7 8 7 11a5 5 0 0010 0c0-3-2.5-6-5-9zm0 3.5C13.3 7.3 15 9.5 15 11a3 3 0 01-6 0c0-1.5 1.7-3.7 3-5.5zM5 14c0 3.9 3.1 7 7 7s7-3.1 7-7c0-.4 0-.8-.1-1.1C17.3 14.6 14.8 16 12 16s-5.3-1.4-6.9-3.1C5 13.2 5 13.6 5 14z" />
                 </svg>
               </div>
-              <span className="text-lg font-bold font-[var(--font-playfair)]">BromoBliss</span>
+              <span className="text-lg font-[var(--font-playfair)]" style={{ fontWeight: 700 }}>TamilSoul</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Your premier guide to experiencing the volcanic wonders of Mount Bromo. Every journey is crafted with passion and local expertise.
+              Tamil Nadu's premier travel experience — curating soulful journeys through ancient temples, verdant hills, and sun-kissed shores since 2015.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((link) => (
@@ -103,25 +104,23 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-white font-semibold mb-5 text-sm tracking-wide">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-gray-400 text-sm hover:text-[#E8703A] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 bg-[#E8703A] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-white font-semibold mb-5 text-sm tracking-wide">Contact Info</h4>
             <ul className="space-y-3">
@@ -134,11 +133,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
           <div>
             <h4 className="text-white font-semibold mb-2 text-sm tracking-wide">Stay Updated</h4>
             <p className="text-gray-400 text-xs mb-4 leading-relaxed">
-              Get the latest tour updates, travel tips, and exclusive offers.
+              Exclusive tour deals, Tamil Nadu travel guides, and cultural insights in your inbox.
             </p>
             {subscribed ? (
               <motion.div
@@ -146,7 +144,7 @@ export default function Footer() {
                 animate={{ opacity: 1, y: 0 }}
                 className="bg-[#E8703A]/20 border border-[#E8703A]/40 rounded-xl p-4 text-center"
               >
-                <span className="text-[#E8703A] font-semibold text-sm">Thanks for subscribing! 🎉</span>
+                <span className="text-[#E8703A] font-semibold text-sm">Vanakkam! You're subscribed 🙏</span>
               </motion.div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
@@ -173,13 +171,13 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            © 2024 BromoBliss. All rights reserved.
+            © 2025 TamilSoul Travel. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
-              <Link key={item} href="#" className="text-gray-500 text-xs hover:text-[#E8703A] transition-colors">
+              <a key={item} href="#" className="text-gray-500 text-xs hover:text-[#E8703A] transition-colors">
                 {item}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

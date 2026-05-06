@@ -9,15 +9,15 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const thumbnails = [
-  { seed: "forest-hike-400", label: "Sunrise Hike", size: "200/280" },
-  { seed: "volcano-crater-200", label: "Crater View", size: "200/280" },
-  { seed: "mountain-trek-600", label: "Trek Adventure", size: "200/280" },
+  { seed: "ancient-temple-gopuram-india", size: "200/280", label: "Madurai", sub: "City of Temples" },
+  { seed: "green-tea-hills-misty-morning", size: "200/280", label: "Ooty", sub: "Nilgiri Hills" },
+  { seed: "coastal-sunrise-india-lighthouse", size: "200/280", label: "Kanyakumari", sub: "Land's End" },
 ];
 
 const stats = [
-  { value: "2,400+", label: "Happy Travelers" },
+  { value: "15K+", label: "Happy Travelers" },
   { value: "4.9★", label: "Rating" },
-  { value: "15+", label: "Tour Packages" },
+  { value: "50+", label: "Tour Packages" },
 ];
 
 export default function HeroSection() {
@@ -45,11 +45,12 @@ export default function HeroSection() {
           toggleActions: "play none none none",
         },
       });
-      tl.from(".hero-tag", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" })
-        .from(".hero-line", { y: 100, opacity: 0, duration: 1, stagger: 0.15, ease: "power4.out" }, "-=0.4")
-        .from(".hero-desc", { y: 30, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
-        .from(".hero-btns", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.3")
-        .from(".hero-stat", { y: 20, opacity: 0, stagger: 0.12, duration: 0.6, ease: "power3.out" }, "-=0.3");
+
+      tl.from(".hero-badge", { y: 20, opacity: 0, duration: 0.7, ease: "power3.out" })
+        .from(".hero-line", { y: 120, opacity: 0, duration: 1.1, stagger: 0.13, ease: "power4.out" }, "-=0.3")
+        .from(".hero-desc", { y: 25, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.5")
+        .from(".hero-btns", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+        .from(".hero-stat", { y: 20, opacity: 0, stagger: 0.1, duration: 0.6, ease: "power3.out" }, "-=0.3");
     }, sectionRef);
 
     return () => ctx.revert();
@@ -59,44 +60,49 @@ export default function HeroSection() {
     <section ref={sectionRef} id="home" className="relative h-screen min-h-[600px] overflow-hidden">
       <div ref={bgRef} className="absolute inset-0 scale-[1.15] will-change-transform">
         <Image
-          src="https://picsum.photos/seed/bromo-dawn-volcano/1920/1080"
-          alt="Mount Bromo Volcanic Landscape"
+          src="https://picsum.photos/seed/ancient-temple-sunrise-landscape/1920/1080"
+          alt="Tamil Nadu — Land of Temples, Hills and Sea"
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/82 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/25" />
       </div>
+
+      {/* Decorative concentric rings */}
+      <div className="absolute top-24 right-36 w-72 h-72 rounded-full border border-white/5 hidden lg:block pointer-events-none" />
+      <div className="absolute top-36 right-48 w-44 h-44 rounded-full border border-[#E8703A]/10 hidden lg:block pointer-events-none" />
+      <div className="absolute top-48 right-56 w-20 h-20 rounded-full border border-[#E8703A]/15 hidden lg:block pointer-events-none" />
 
       <div className="relative z-10 h-full flex flex-col justify-center max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-3xl">
-          {/* <div className="hero-tag flex items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 bg-[#E8703A]/20 backdrop-blur-sm border border-[#E8703A]/40 text-[#ffb380] text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full">
+          <div className="hero-badge flex items-center gap-3 mb-7">
+            <span className="inline-flex items-center gap-2 bg-[#E8703A]/20 backdrop-blur-sm border border-[#E8703A]/40 text-[#ffb380] text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8703A] animate-pulse" />
-              Active Bromo Hike
+              Where Gods Dwell & Nature Reigns
             </span>
-          </div> */}
+          </div>
 
           <h1
             ref={textRef}
-            className="font-[var(--font-playfair)] text-white leading-[1.1] mb-6"
-            style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)" }}
+            className="font-[var(--font-playfair)] text-white leading-[1.05] mb-7"
+            style={{ fontSize: "clamp(2.8rem, 6.5vw, 5.8rem)" }}
           >
             <div className="overflow-hidden">
-              <span className="hero-line block">Unforgettable</span>
+              <span className="hero-line block">Experience</span>
             </div>
             <div className="overflow-hidden">
-              <span className="hero-line block">Mount Bromo</span>
+              <span className="hero-line block">Timeless</span>
             </div>
             <div className="overflow-hidden">
-              <span className="hero-line block text-[#E8703A]">Sunrise Experience</span>
+              <span className="hero-line block text-[#E8703A] italic">Tamil Nadu</span>
             </div>
           </h1>
 
-          <p className="hero-desc text-white/70 text-base md:text-lg leading-relaxed max-w-xl mb-8">
-            Experience breathtaking sunrise, explore volcanic landscapes, and create memories at one of Indonesia&apos;s most iconic destinations.
+          <p className="hero-desc text-white/70 text-base md:text-lg leading-relaxed max-w-xl mb-9">
+            Ancient temples rising to the heavens, misty Nilgiri peaks, and sun-kissed shores — discover a land where every journey becomes a sacred story.
           </p>
 
           <div className="hero-btns flex flex-wrap gap-4">
@@ -112,12 +118,12 @@ export default function HeroSection() {
               </svg>
             </motion.a>
             <motion.a
-              href="#moments"
+              href="#destinations"
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 border border-white/40 text-white px-7 py-3.5 rounded-full font-semibold text-sm backdrop-blur-sm transition-colors hover:border-white/70"
             >
-              Discover More
+              Our Destinations
             </motion.a>
           </div>
 
@@ -139,7 +145,7 @@ export default function HeroSection() {
               whileInView={{ opacity: 1, y: 0, rotate: i === 1 ? -3 : i === 2 ? 3 : 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + i * 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{ y: -8, rotate: 0, scale: 1.05, zIndex: 10 }}
+              whileHover={{ y: -10, rotate: 0, scale: 1.05, zIndex: 10 }}
               className="relative w-28 h-40 rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
               style={{ transformOrigin: "bottom center" }}
             >
@@ -150,9 +156,10 @@ export default function HeroSection() {
                 className="object-cover"
                 sizes="112px"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <div className="absolute bottom-2 left-2 right-2">
-                <span className="text-white text-[10px] font-semibold leading-tight block">{t.label}</span>
+                <span className="text-white text-[10px] font-bold leading-tight block">{t.label}</span>
+                <span className="text-white/60 text-[9px] leading-tight block">{t.sub}</span>
               </div>
             </motion.div>
           ))}
